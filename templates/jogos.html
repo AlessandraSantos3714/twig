@@ -1,7 +1,28 @@
 {% extends "_base.html" %}
 
 {% block conteudo %}
+
+{% set estilos= {
+    'acao': 'Ação',
+    'tiro': 'Tiro',
+    'rpg': 'RPG',
+}%}
+
 <h3>Lista de jogos</h3>
 
 <a href="jogos_inserir.php"> + Novo Jogo</a>
+
+<table border="1" style="border-collapse: collapse;border-color: rgb(12, 12, 61)">
+    <tr>
+        <td>Nome</td>
+        <td>Estilo</td>
+    </tr>
+    {% for jogo in jogos %}
+    <tr>
+         <td>{{ jogo.nome }}</td>
+         <td>{{ estilos[jogo.estilo] }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
 {% endblock %}

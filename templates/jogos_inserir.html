@@ -8,10 +8,10 @@
 <p style="color: red;">{{ erro }}</p>
 {% endif %}
 
-<form action="jogos_inserir.php" method="post">
+<form action="jogos_inserir.php" method="post" enctype="multipart/form-data">
     <input type="text" name="nome" placeholder="nome" >
     <br>
-    <select name="estilo">
+    Estilo: <select name="estilo">
         <option value="acao">Ação</option>
         <option value="tiro">Tiro</option>
         <option value="rpg">RPG</option>
