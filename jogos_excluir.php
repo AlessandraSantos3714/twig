@@ -3,15 +3,16 @@
 require('carregar_twig.php');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    require('carregar_pdo.php');
     $id = (int) $_POST["id"] ?? false;   
     if ($id){
         $excluir = $pdo->prepare('DELETE FROM jogos WHERE id = :id');
         $excluir->bindParam(':id', $id);
         $excluir->execute();
     } 
+    header('location:jogos.php');
 }
-header('location:jogos.php');
-die;
+
 
 $id = (int) $_GET["id"] ?? false;
 require('carregar_twig.php');
