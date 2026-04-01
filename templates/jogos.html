@@ -6,21 +6,33 @@
     'acao': 'Ação',
     'tiro': 'Tiro',
     'rpg': 'RPG',
+    'aventura': 'Aventura',
+    'estrategia': 'Estratégia',
+    'esportes': 'Esportes',
+    'puzzle': 'Puzzle',
+    'simulacao': 'Simulação',
+    'corrida': 'Corrida',
 }%}
 
 <h3>Lista de jogos</h3>
 
-<a href="jogos_inserir.php"> + Novo Jogo</a>
+<a href="jogos_inserir.php"> ➕Novo Jogo</a>
 
 <table border="1" style="border-collapse: collapse;border-color: rgb(12, 12, 61)">
     <tr>
         <td>Nome</td>
         <td>Estilo</td>
+        <td>Capa</td>
+        <td>Editar</td>
+        <td>Excluir</td>
     </tr>
     {% for jogo in jogos %}
     <tr>
          <td>{{ jogo.nome }}</td>
-         <td>{{ estilos[jogo.estilo] }}</td>
+         <td>{{ estilos[jogo.estilo] ?? "Não encontrado" }}</td>
+         <td><img src="img/{{ jogo.capa }}" width="150"></td>
+         <td><a href="jogos_editar.php?id={{ jogo.id }}">✍🏼</a></td>
+         <td><a href="jogos_excluir.php?id={{ jogo.id }}">🗑️</a></td>
     </tr>
     {% endfor %}
 </table>

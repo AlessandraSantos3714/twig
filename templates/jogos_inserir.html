@@ -5,7 +5,7 @@
 <h3>Inserir jogos</h3>
 
 {% if erro %}
-<p style="color: red;">{{ erro }}</p>
+<p style="color: red;">⚠️{{ erro }}</p>
 {% endif %}
 
 <form action="jogos_inserir.php" method="post" enctype="multipart/form-data">
@@ -15,6 +15,12 @@
         <option value="acao">Ação</option>
         <option value="tiro">Tiro</option>
         <option value="rpg">RPG</option>
+        <option value="aventura">Aventura</option>
+        <option value="estrategia">Estratégia</option>
+        <option value="simulacao">simulação</option>
+        <option value="esportes">Esportes</option>
+        <option value="puzzle">puzzle</option>
+        <option value="corrida">Corrida</option>
     </select>
     <br>
     Capa: <input type="file" name="capa">

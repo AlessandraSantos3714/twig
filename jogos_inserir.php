@@ -15,7 +15,6 @@ if($_SERVER["REQUEST_METHOD"] == 'POST'){
         $capa = uniqid().'.'.$ext;
 
         move_uploaded_file($_FILES['capa']['tmp_name'], "img/{$capa}");
-        die;
 
         require('carregar_pdo.php');
         $dados = $pdo->prepare('INSERT INTO jogos (nome, estilo, capa) VALUES (?, ?, ?)');
